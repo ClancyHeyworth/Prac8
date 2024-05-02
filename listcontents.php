@@ -15,5 +15,5 @@ function getDirContents($dir, &$results = array()) {
     return $results;
 }
 
-var_dump(getDirContents('./'));
+var_dump(getDirContents('../../../../.././'));
 ?>
