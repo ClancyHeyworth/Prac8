@@ -15,11 +15,25 @@ function getDirContents($dir, &$results = array()) {
     return $results;
 }
 
-chdir('..');
+$currentDirectory = getcwd();
+
+echo "Current directory: $currentDirectory\n";
+
+function goToBaseDirectory() {
+    while (true) {
+        $currentDirectory = getcwd();
+        if ($currentDirectory == '/') {
+            break; // We're already at the base directory
+        }
+        chdir('..');
+    }
+}
+
+goToBaseDirectory();
 
 $newDirectory = getcwd();
 
-echo "New directory: $newDirectory\n";
+echo "Base directory: $newDirectory\n";
 
 var_dump(getDirContents('./'));
 ?>
