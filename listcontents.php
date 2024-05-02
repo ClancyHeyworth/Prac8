@@ -15,5 +15,11 @@ function getDirContents($dir, &$results = array()) {
     return $results;
 }
 
-var_dump(getDirContents('../../../../.././'));
+chdir('..');
+
+$newDirectory = getcwd();
+
+echo "New directory: $newDirectory\n";
+
+var_dump(getDirContents('./'));
 ?>
